@@ -1,10 +1,9 @@
-MyVieewsBackend
 
-#Base de datos
+# Base de datos
 Las bases de datos utilizadas para estre proyecto son mongoDb y postgresql, Los BD estan importadas, dentro del la carpeta dataBase
 
 
-#MongoDD
+# MongoDD
 Se requiere intalado MongoDB Para importar la BD no relacional se debera ingresar dentro de la carpeta dataBase
 
 Se debera ejecutar los comandos:
@@ -15,7 +14,7 @@ Para exportar la BD no relacional se debera ingresar dentro de la carpeta dataBa
 
 mongodump --db MDB_MyVieews --host localhost:27017
 
-#Postgresql
+# Postgresql
 
 Se requiere tener instalado Postgresql, y pgAdmin4 Para importar la BD se debera:
 
