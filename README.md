@@ -10,9 +10,10 @@ Se debera ejecutar los comandos:
 
   -  mongorestore
   -   rm -r dump
+  
 Para exportar la BD no relacional se debera ingresar dentro de la carpeta dataBase y ejecutar
 
-mongodump --db MDB_MyVieews --host localhost:27017
+-    mongodump --db MDB_MyVieews --host localhost:27017
 
 # Postgresql
 
@@ -21,6 +22,7 @@ Se requiere tener instalado Postgresql, y pgAdmin4 Para importar la BD se debera
 - Iniciar pgAdmin4
 - Crear una DB con el nombre MyVieews
 - Importar el archivo sql de la carpeta dataBase/Db_Postgresql
+
 Para exportar la BD no relacional se debera ingresar dentro de la carpeta dataBase y ejecutar
 
 Iniciar pgAdmin4
