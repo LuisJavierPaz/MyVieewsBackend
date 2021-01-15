@@ -55,4 +55,17 @@ public class Video {
     @Column(name ="visibilad", nullable=false)
     private String visibilidad;
 
+
+    //relations
+    //canal-video
+    @JoinColumn(name="fkid_canal", referencedColumnName = "id_canal")
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Canal canal;
+
+
+    //categoria-video
+    @JoinColumn(name="fkid_categoria", referencedColumnName = "id_categoria")
+    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Categoria categoria;
+
 }

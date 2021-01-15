@@ -27,6 +27,7 @@ public class Persona {
     @Column(name ="apellido", nullable=false)
     private String apellido;
 
+    @Temporal(TemporalType.TIMESTAMP)
     @Column(name ="fecha_nacimiento", nullable=false)
     private Date fechaNacimiento;
 
@@ -38,4 +39,18 @@ public class Persona {
 
     @Column(name ="external_id", nullable=false, unique=true)
     private String externalId;
+
+    ///relations
+    //rol-persona
+    @JoinColumn(name="fkid_rol", referencedColumnName = "id_rol")
+    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Rol rol;
+
+    //persona-cuenta
+    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Cuenta cuenta;
+
+    //persona-canal
+    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Canal canal;
 }

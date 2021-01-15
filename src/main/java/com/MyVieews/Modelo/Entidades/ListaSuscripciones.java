@@ -18,4 +18,11 @@ public class ListaSuscripciones {
     @Column(name ="id_suscripciones")
     private long id;
 
+    @Column(name ="id_canal_suscripciones", nullable=false)
+    private long idCanalSuscrito;
+
+    @JoinColumn(name="fkid_canal", referencedColumnName = "id_canal")
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Canal canal;
+
 }

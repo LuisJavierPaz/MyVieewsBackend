@@ -16,5 +16,8 @@ public class Rol {
 
     @Column(name ="tipo", nullable=false, unique=true)
     private String tipo;
+    //relations
+    @OneToOne(mappedBy = "rol", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Persona persona;
 
 }

@@ -2,6 +2,7 @@ package com.MyVieews.Modelo.Entidades;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /*
 -id: int
@@ -30,8 +31,9 @@ public class Canal {
     @Column(name ="nombreUsuario", nullable=false, unique=true)
     private String nombreCanal;
 
-    @Column(name ="nombreUsuario", nullable=false, unique=true)
-    private Date fechaCreacion;
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name ="fecha_creacion", nullable=false, unique=true)
+    private Date fechaCreacion=new Date();
 
     @Column(name ="descripcion", nullable=false)
     private String descripcion;
@@ -41,4 +43,19 @@ public class Canal {
 
     @Column(name ="reportes", nullable=false)
     private int reportes;
+
+    //relations
+    //persona-canal
+    @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
+    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Persona persona;
+
+    //canal - video
+    @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Video> video;
+
+    @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<ListaSuscripciones> suscripcion;
+
+
 }

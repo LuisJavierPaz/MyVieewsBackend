@@ -33,4 +33,10 @@ public class Cuenta {
 
     @Column(name ="external_id", nullable=false)
     private String externalId;
+
+    //relations
+    //persona-cuenta
+    @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
+    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    private Persona persona;
 }
