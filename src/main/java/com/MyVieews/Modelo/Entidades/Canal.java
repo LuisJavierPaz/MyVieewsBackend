@@ -30,7 +30,7 @@ public class Canal {
     @Column(name ="nombreUsuario", nullable=false, unique=true)
     private String nombreCanal;
 
-    @Column(name ="nombreUsuario", nullable=false, unique=true)
+    @Column(name ="fec_creacion", nullable=false, unique=true)
     private Date fechaCreacion;
 
     @Column(name ="descripcion", nullable=false)
