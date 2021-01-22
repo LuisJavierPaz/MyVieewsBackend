@@ -31,14 +31,10 @@ public class Canal {
     @Column(name ="nombreUsuario", nullable=false, unique=true)
     private String nombreCanal;
 
-<<<<<<< HEAD
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name ="fecha_creacion", nullable=false, unique=true)
     private Date fechaCreacion=new Date();
-=======
-    @Column(name ="fec_creacion", nullable=false, unique=true)
-    private Date fechaCreacion;
->>>>>>> 8b5c575e91e55bf788e46fde39df7cfac0379cee
+
 
     @Column(name ="descripcion", nullable=false)
     private String descripcion;
