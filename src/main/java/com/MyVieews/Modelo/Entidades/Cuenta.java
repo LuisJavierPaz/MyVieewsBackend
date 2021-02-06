@@ -1,42 +1,87 @@
 package com.MyVieews.Modelo.Entidades;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-/*
-- id : int
--correoElectronico: String
-- nombreUsuario: String
--clave: String
--estado:boolean
--external_id: String
- */
-
-//@Entity
-//@Table(name = "cuenta")
+@Entity
+@Table(name="cuenta")
 public class Cuenta {
-    /*@Id
+	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_cuenta")
-    private long id;
-
-    @Column(name ="correo_electronico", nullable=false, unique=true)
+    private long idcuenta;
     private String correoElectronico;
-
-    @Column(name ="nombre_usuario", nullable=false)
     private String nombreUsuario;
-
-    @Column(name ="clave", nullable=false)
     private String clave;
-
-    @Column(name ="estado", nullable=false)
     private boolean estado;
-
-    @Column(name ="external_id", nullable=false)
     private String externalId;
+  //atrubutos para generar las relaciones(fk)
+  	@OneToOne//especificamos el tipo de relacion que extiste entre las tablas
+  	@JoinColumn(name="id_per")//le asignamos un nombre a la fk
+    private Persona persona;
+  	
+  	//CREAMOS LOS CONSTRUCTORES
+  	public Cuenta(String correoElectronico, String nombreUsuario, String clave, boolean estado, String externalId,
+			Persona persona) {
+		super();
+		this.correoElectronico = correoElectronico;
+		this.nombreUsuario = nombreUsuario;
+		this.clave = clave;
+		this.estado = estado;
+		this.externalId = externalId;
+		this.persona = persona;
+	}
+  	public Cuenta() {
+		
+	}
+  	
+  	//GENERAMOS LOS GET Y SET
+    public long getIdcuenta() {
+		return idcuenta;
+	}
+	
+	public void setIdcuenta(long idcuenta) {
+		this.idcuenta = idcuenta;
+	}
+	public String getCorreoElectronico() {
+		return correoElectronico;
+	}
+	public void setCorreoElectronico(String correoElectronico) {
+		this.correoElectronico = correoElectronico;
+	}
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
+	}
+	public String getClave() {
+		return clave;
+	}
+	public void setClave(String clave) {
+		this.clave = clave;
+	}
+	public boolean isEstado() {
+		return estado;
+	}
+	public void setEstado(boolean estado) {
+		this.estado = estado;
+	}
+	public String getExternalId() {
+		return externalId;
+	}
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+	public Persona getPersona() {
+		return persona;
+	}
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
 
-    //relations
-    //persona-cuenta
-    @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
-    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    private Persona persona;*/
 }
