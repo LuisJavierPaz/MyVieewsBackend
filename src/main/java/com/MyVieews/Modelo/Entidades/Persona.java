@@ -53,4 +53,32 @@ public class Persona {
     //persona-canal
     @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Canal canal;
+
+    public long getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public String getGenero() {
+        return genero;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
 }

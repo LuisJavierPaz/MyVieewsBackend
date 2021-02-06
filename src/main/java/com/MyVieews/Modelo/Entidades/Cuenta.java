@@ -39,4 +39,28 @@ public class Cuenta {
     @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
     @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Persona persona;
+
+    public long getId() {
+        return id;
+    }
+
+    public String getCorreoElectronico() {
+        return correoElectronico;
+    }
+
+    public String getNombreUsuario() {
+        return nombreUsuario;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
 }

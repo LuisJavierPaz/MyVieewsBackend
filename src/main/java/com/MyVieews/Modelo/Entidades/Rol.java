@@ -20,4 +20,11 @@ public class Rol {
     @OneToOne(mappedBy = "rol", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Persona persona;
 
+    public int getId() {
+        return id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
 }

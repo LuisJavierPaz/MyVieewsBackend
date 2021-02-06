@@ -21,8 +21,22 @@ public class ListaSuscripciones {
     @Column(name ="id_canal_suscripciones", nullable=false)
     private long idCanalSuscrito;
 
+    @Column(name ="notificacion", nullable=false)
+    private  String notificacion;
+
     @JoinColumn(name="fkid_canal", referencedColumnName = "id_canal")
     @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Canal canal;
 
+    public long getId() {
+        return id;
+    }
+
+    public long getIdCanalSuscrito() {
+        return idCanalSuscrito;
+    }
+
+    public String getNotificacion() {
+        return notificacion;
+    }
 }

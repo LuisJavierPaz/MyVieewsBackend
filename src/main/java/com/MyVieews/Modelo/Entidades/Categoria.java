@@ -23,4 +23,16 @@ public class Categoria {
 
     @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Video video;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public String getExternaId() {
+        return externaId;
+    }
 }
