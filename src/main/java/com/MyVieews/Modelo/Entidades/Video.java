@@ -17,10 +17,10 @@ import java.util.Date;
 - external_id: String
  */
 
-@Entity
-@Table(name="video")
+//@Entity
+//@Table(name="video")
 public class Video {
-    @Id
+/*    @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name ="id_video")
     private long id;
@@ -67,5 +67,5 @@ public class Video {
     @JoinColumn(name="fkid_categoria", referencedColumnName = "id_categoria")
     @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Categoria categoria;
-
+*/
 }

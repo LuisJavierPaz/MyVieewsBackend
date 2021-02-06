@@ -2,22 +2,38 @@ package com.MyVieews.Modelo.Entidades;
 
 import javax.persistence.*;
 
-/*
--id : int
--tipo : String
- */
 @Entity
 @Table(name="rol")
 public class Rol {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name ="id_rol")
-    private int id;
+    private long id;
+	private String tiprol;
+	
+	//CREAMOS LOS CONSTRUCTORES
+	public Rol(long id, String tiprol) {
+		super();
+		this.id = id;
+		this.tiprol = tiprol;
+	}
+	
+	public Rol() {
+		
+	}
+	//GENERAMOS LOS GET Y SET
+    public long getId() {
+		return id;
+	}
+	public void setId(long id) {
+		this.id = id;
+	}
+	public String getTiprol() {
+		return tiprol;
+	}
+	public void setTiprol(String tiprol) {
+		this.tiprol = tiprol;
+	}
 
-    @Column(name ="tipo", nullable=false, unique=true)
-    private String tipo;
-    //relations
-    @OneToOne(mappedBy = "rol", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Persona persona;
+    
 
 }

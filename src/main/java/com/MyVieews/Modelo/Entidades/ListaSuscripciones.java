@@ -10,10 +10,10 @@ import javax.persistence.*;
 -notificacion: boolean
  */
 
-@Entity
-@Table(name="suscripcion")
+//@Entity
+//@Table(name="suscripcion")
 public class ListaSuscripciones {
-    @Id
+    /*@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name ="id_suscripciones")
     private long id;
@@ -24,5 +24,5 @@ public class ListaSuscripciones {
     @JoinColumn(name="fkid_canal", referencedColumnName = "id_canal")
     @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Canal canal;
-
+*/
 }

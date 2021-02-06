@@ -7,10 +7,10 @@ import javax.persistence.*;
 - nombreCategoria: String
 -external_id: String
  */
-@Entity
-@Table(name="categoria")
+//@Entity
+//@Table(name="categoria")
 public class Categoria {
-    @Id
+    /*@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name ="id_categoria")
     private int id;
@@ -22,5 +22,5 @@ public class Categoria {
     private String externaId;
 
     @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Video video;
+    private Video video;*/
 }

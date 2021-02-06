@@ -3,54 +3,104 @@ package com.MyVieews.Modelo.Entidades;
 import javax.persistence.*;
 import java.util.Date;
 
-/*
-- id : int
-- nombre : String
-- apellido : String
-- fechaNacimiento : Date
-- genero :  String
-- telefono : String
--external_id: String
- */
 
 @Entity
 @Table(name="persona")
 public class Persona {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name ="id_persona")
     private long id;
-
-    @Column(name ="nombre", nullable=false)
-    private String nombre;
-
-    @Column(name ="apellido", nullable=false)
+	private String nombre;
     private String apellido;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name ="fecha_nacimiento", nullable=false)
     private Date fechaNacimiento;
-
-    @Column(name ="genero", nullable=false)
     private String genero;
-
-    @Column(name ="telefono", nullable=false)
     private String telefono;
-
-    @Column(name ="external_id", nullable=false, unique=true)
     private String externalId;
+  //atrubutos para generar las relaciones(fk)
+  	@ManyToOne//especificamos el tipo de relacion que extiste entre las tablas
+  	@JoinColumn(name="id_rol")//le asignamos un nombre a la fk
+  	private Rol rol;
+    
+    //CREAMOS LOS CONSTRUCTORES	
+	public Persona() {
+    	
+    }   
+    
+    public Persona(String nombre, String apellido, Date fechaNacimiento, String genero, String telefono,
+			String externalId, Rol rol) {
+		super();
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.fechaNacimiento = fechaNacimiento;
+		this.genero = genero;
+		this.telefono = telefono;
+		this.externalId = externalId;
+		this.rol = rol;
+	}
 
-    ///relations
-    //rol-persona
-    @JoinColumn(name="fkid_rol", referencedColumnName = "id_rol")
-    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    private Rol rol;
+	//GENERAMOS LOS GET Y SET
+	public long getId() {
+		return id;
+	}
 
-    //persona-cuenta
-    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Cuenta cuenta;
+	public void setId(long id) {
+		this.id = id;
+	}
 
-    //persona-canal
-    @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Canal canal;
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public void setApellido(String apellido) {
+		this.apellido = apellido;
+	}
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+	public String getGenero() {
+		return genero;
+	}
+
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
+	}
+
+	public String getExternalId() {
+		return externalId;
+	}
+
+	public void setExternalId(String externalId) {
+		this.externalId = externalId;
+	}
+
+    public Rol getRol() {
+		return rol;
+	}
+
+	public void setRol(Rol rol) {
+		this.rol = rol;
+	}
+
 }

@@ -14,10 +14,10 @@ import java.util.List;
 -strike: int
 -reportes: int */
 
-@Entity
-@Table(name="canal")
+//@Entity
+//@Table(name="canal")
 public class Canal {
-    @Id
+    /*@Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name ="id_canal")
     private long id;
@@ -58,5 +58,5 @@ public class Canal {
     @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ListaSuscripciones> suscripcion;
 
-
+*/
 }

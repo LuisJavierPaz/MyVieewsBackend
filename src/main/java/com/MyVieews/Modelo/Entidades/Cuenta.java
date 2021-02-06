@@ -11,10 +11,10 @@ import javax.persistence.*;
 -external_id: String
  */
 
-@Entity
-@Table(name = "cuenta")
+//@Entity
+//@Table(name = "cuenta")
 public class Cuenta {
-    @Id
+    /*@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_cuenta")
     private long id;
@@ -38,5 +38,5 @@ public class Cuenta {
     //persona-cuenta
     @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
     @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    private Persona persona;
+    private Persona persona;*/
 }
