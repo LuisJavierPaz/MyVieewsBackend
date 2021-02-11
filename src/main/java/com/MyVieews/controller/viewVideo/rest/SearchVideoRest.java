@@ -22,10 +22,7 @@ public class SearchVideoRest {
     }
 
     @GetMapping("/{nombre}")
-    public List<Video> getVideo(@PathVariable("nombre") String nombre) {
+    public List<filtrerVideo> getVideo(@PathVariable("nombre") String nombre) {
         return this.searchVideoServices.getVideoName(nombre);
     }
-
-
-
 }
