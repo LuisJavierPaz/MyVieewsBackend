@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5432/MyVieewsBeta</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="dd3d3ms5g8510t@ec2-3-230-247-88.compute-1.amazonaws.com" uuid="4fb05fa7-9f09-4598-9e1d-eca747d034cb">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-3-230-247-88.compute-1.amazonaws.com:5432/dd3d3ms5g8510t</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
