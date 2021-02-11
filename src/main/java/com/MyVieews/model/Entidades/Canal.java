@@ -1,8 +1,4 @@
-package com.MyVieews.Modelo.Entidades;
-
-import javax.persistence.*;
-import java.util.Date;
-import java.util.List;
+package com.MyVieews.model.Entidades;
 
 /*
 -id: int
@@ -55,43 +51,6 @@ public class Canal {
     @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ListaSuscripciones> suscripcion;
 
-<<<<<<< HEAD
+
 */
-=======
-    public long getId() {
-        return id;
-    }
-
-    public String getFotoPerfil() {
-        return fotoPerfil;
-    }
-
-    public String getFotoPortada() {
-        return fotoPortada;
-    }
-
-    public String getNombreCanal() {
-        return nombreCanal;
-    }
-
-    public Date getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public int getStrike() {
-        return strike;
-    }
-
-    public int getReportes() {
-        return reportes;
-    }
-
-    public Persona getPersona() {
-        return persona;
-    }
-
-    public List<ListaSuscripciones> getSuscripcion() {
-        return suscripcion;
-    }
->>>>>>> 1d88ac2 (Desarrollando commit:)
 }

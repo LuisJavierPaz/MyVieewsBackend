@@ -1,4 +1,4 @@
-package com.MyVieews.Modelo.Entidades;
+package com.MyVieews.model.Entidades;
 
 import javax.persistence.*;
 
@@ -18,7 +18,6 @@ public class Rol {
 	}
 	
 	public Rol() {
-		
 	}
 	//GENERAMOS LOS GET Y SET
     public long getId() {
@@ -33,14 +32,4 @@ public class Rol {
 	public void setTiprol(String tiprol) {
 		this.tiprol = tiprol;
 	}
-
-    
-
-    public int getId() {
-        return id;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
 }

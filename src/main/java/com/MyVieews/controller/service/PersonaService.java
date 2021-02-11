@@ -1,4 +1,4 @@
-package com.MyVieews.Modelo.Service;
+package com.MyVieews.controller.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -10,8 +10,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import com.MyVieews.Modelo.Entidades.Persona;
-import com.MyVieews.Modelo.Repository.PersonaRepository;
+import com.MyVieews.model.Entidades.Persona;
+import com.MyVieews.controller.repository.PersonaRepository;
 
 
 

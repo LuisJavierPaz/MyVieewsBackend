@@ -1,7 +1,6 @@
-package com.MyVieews.controller.viewVideo.repository;
+package com.MyVieews.controller.repository;
 
-import com.MyVieews.Modelo.Entidades.Video;
-import com.mongodb.lang.NonNull;
+import com.MyVieews.model.Entidades.Video;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

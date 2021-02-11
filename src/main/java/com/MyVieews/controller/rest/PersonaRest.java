@@ -1,4 +1,4 @@
-package com.MyVieews.Modelo.Rest;
+package com.MyVieews.controller.rest;
 
 import java.net.URI;
 import java.util.List;
@@ -12,29 +12,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.MyVieews.Modelo.Entidades.Cuenta;
-import com.MyVieews.Modelo.Service.CuentaService;
+import com.MyVieews.model.Entidades.Persona;
+import com.MyVieews.controller.service.PersonaService;
+
 
 @RestController
-@RequestMapping("/cuentas/")
-public class CuentaRest {
+@RequestMapping("/personas/")
+public class PersonaRest {
 	@Autowired
-	private CuentaService cuentaService;
+	private PersonaService personaService;
 	
 	//Metodo para listar todas las personas registradas en la DB
 	@GetMapping
-	private ResponseEntity<List<Cuenta>> getAllPersonas (){
-		return ResponseEntity.ok(cuentaService.findAll());
+	private ResponseEntity<List<Persona>> getAllPersonas (){
+		return ResponseEntity.ok(personaService.findAll());
 	}
 	
 	@PostMapping//Se utiliza para guardar
-	private ResponseEntity<Cuenta> savePersona (@RequestBody Cuenta cuenta){
+	private ResponseEntity<Persona> savePersona (@RequestBody Persona persona){
 		try {
-			Cuenta cuentaGuardada = cuentaService.save(cuenta);		
-			return ResponseEntity.created(new URI("/cuentas/"+cuentaGuardada.getIdcuenta())).body(cuentaGuardada);
+			Persona personaGuardada = personaService.save(persona);		
+			return ResponseEntity.created(new URI("/personas/"+personaGuardada.getId())).body(personaGuardada);
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
-
 }

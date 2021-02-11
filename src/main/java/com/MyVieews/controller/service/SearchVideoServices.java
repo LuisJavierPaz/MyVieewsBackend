@@ -1,13 +1,11 @@
-package com.MyVieews.controller.viewVideo.service;
+package com.MyVieews.controller.service;
 
 
-import com.MyVieews.Modelo.Entidades.Video;
-import com.MyVieews.controller.viewVideo.repository.SearchVideoRepository;
+import com.MyVieews.controller.repository.SearchVideoRepository;
 import com.MyVieews.utils.filtrerVideo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service("SearchVideoSeevices")

@@ -1,6 +1,4 @@
-package com.MyVieews.Modelo.Entidades;
-
-import javax.persistence.*;
+package com.MyVieews.model.Entidades;
 
 /*
 - id : int
@@ -27,20 +25,7 @@ public class ListaSuscripciones {
     @JoinColumn(name="fkid_canal", referencedColumnName = "id_canal")
     @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Canal canal;
-<<<<<<< HEAD
+
 */
-=======
 
-    public long getId() {
-        return id;
-    }
-
-    public long getIdCanalSuscrito() {
-        return idCanalSuscrito;
-    }
-
-    public String getNotificacion() {
-        return notificacion;
-    }
->>>>>>> 1d88ac2 (Desarrollando commit:)
 }

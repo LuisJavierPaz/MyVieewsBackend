@@ -1,13 +1,11 @@
-package com.MyVieews.controller.viewVideo.rest;
+package com.MyVieews.controller.rest;
 
 
-import com.MyVieews.Modelo.Entidades.Video;
-import com.MyVieews.controller.viewVideo.service.SearchVideoServices;
+import com.MyVieews.controller.service.SearchVideoServices;
 import com.MyVieews.utils.filtrerVideo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 @CrossOrigin
 @RestController

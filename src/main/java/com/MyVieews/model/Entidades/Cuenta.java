@@ -1,4 +1,4 @@
-package com.MyVieews.Modelo.Entidades;
+package com.MyVieews.model.Entidades;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,9 +21,9 @@ public class Cuenta {
     private String externalId;
   //atrubutos para generar las relaciones(fk)
   	@OneToOne//especificamos el tipo de relacion que extiste entre las tablas
-  	@JoinColumn(name="id_per")//le asignamos un nombre a la fk
+  	@JoinColumn(name="id_persona")//le asignamos un nombre a la fk
     private Persona persona;
-<<<<<<< HEAD
+
   	
   	//CREAMOS LOS CONSTRUCTORES
   	public Cuenta(String correoElectronico, String nombreUsuario, String clave, boolean estado, String externalId,
@@ -85,30 +85,5 @@ public class Cuenta {
 		this.persona = persona;
 	}
 
-=======
 
-    public long getId() {
-        return id;
-    }
-
-    public String getCorreoElectronico() {
-        return correoElectronico;
-    }
-
-    public String getNombreUsuario() {
-        return nombreUsuario;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public String getExternalId() {
-        return externalId;
-    }
->>>>>>> 1d88ac2 (Desarrollando commit:)
 }
