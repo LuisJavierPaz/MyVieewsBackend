@@ -15,8 +15,11 @@ import java.util.List;
  * */
 @Repository
 public interface SearchVideoRepository extends JpaRepository<Video, Serializable> {
-
-    public List<Video> findByNombreContaining( String nameVideo);
+    @Query(
+            value = "select  new com.MyVieews.utils.filtrerVideo(video.id, video.externalId, video.nombre,  video.directorio, video.descripcion, video.visualizaciones, video.fechaPublicacion, canal.nombreCanal)" +
+                    " from Video video inner join Canal  canal on video.canal.id = canal.id where upper(video.nombre) like concat('%',upper(:nombre),'%')"
+    )
+    public List<com.MyVieews.utils.filtrerVideo> findByNombreLike(@Param("nombre") String nombre);
 
     @Query(value = "select new com.MyVieews.utils.filtrerVideo(video.id, video.externalId, video.nombre,  video.directorio, video.descripcion, video.visualizaciones, video.fechaPublicacion, canal.nombreCanal) from Video video inner join  Canal canal on canal.id=video.canal.id")
     public List<com.MyVieews.utils.filtrerVideo> findAllVideoLow();
