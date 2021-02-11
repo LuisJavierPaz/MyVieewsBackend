@@ -28,7 +28,7 @@ public class Canal {
     @Column(name ="foto_portada", nullable=false, unique=true)
     private String fotoPortada;
 
-    @Column(name ="nombreUsuario", nullable=false, unique=true)
+    @Column(name ="nombre_usuario", nullable=false, unique=true)
     private String nombreCanal;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -36,10 +36,7 @@ public class Canal {
     private Date fechaCreacion=new Date();
 
 
-    @Column(name ="descripcion", nullable=false)
-    private String descripcion;
-
-    @Column(name ="strinke", nullable=false)
+    @Column(name ="strike", nullable=false)
     private int strike;
 
     @Column(name ="reportes", nullable=false)
@@ -58,5 +55,43 @@ public class Canal {
     @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<ListaSuscripciones> suscripcion;
 
+<<<<<<< HEAD
 */
+=======
+    public long getId() {
+        return id;
+    }
+
+    public String getFotoPerfil() {
+        return fotoPerfil;
+    }
+
+    public String getFotoPortada() {
+        return fotoPortada;
+    }
+
+    public String getNombreCanal() {
+        return nombreCanal;
+    }
+
+    public Date getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public int getStrike() {
+        return strike;
+    }
+
+    public int getReportes() {
+        return reportes;
+    }
+
+    public Persona getPersona() {
+        return persona;
+    }
+
+    public List<ListaSuscripciones> getSuscripcion() {
+        return suscripcion;
+    }
+>>>>>>> 1d88ac2 (Desarrollando commit:)
 }

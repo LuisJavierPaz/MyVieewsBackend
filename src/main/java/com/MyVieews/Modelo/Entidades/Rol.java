@@ -36,4 +36,11 @@ public class Rol {
 
     
 
+    public int getId() {
+        return id;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
 }
