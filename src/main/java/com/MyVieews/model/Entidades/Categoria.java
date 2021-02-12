@@ -1,26 +1,27 @@
 package com.MyVieews.model.Entidades;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /*
 - id : int
 - nombreCategoria: String
 -external_id: String
  */
-//@Entity
-//@Table(name="categoria")
+@Entity
+@Table(name="categoria")
 public class Categoria {
-    /*@Id
+    @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name ="id_categoria")
-    private int id;
+    private int idcat;
+    private String nomcat;
 
-    @Column(name ="nombre_categoria", nullable=false, unique=true)
-    private String nombreCategoria;
-
-    @Column(name ="external_id", nullable=false, unique=true)
     private String externaId;
 
-    @OneToOne(mappedBy = "categoria", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-
-    private Video video;*/
+  
 
 }

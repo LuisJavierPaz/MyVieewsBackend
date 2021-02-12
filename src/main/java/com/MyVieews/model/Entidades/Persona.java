@@ -3,31 +3,32 @@ package com.MyVieews.model.Entidades;
 import javax.persistence.*;
 import java.util.Date;
 
-
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 public class Persona {
-    @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 	private String nombre;
-    private String apellido;
-    private Date fechaNacimiento;
-    private String genero;
-    private String telefono;
-    private String externalId;
-  //atrubutos para generar las relaciones(fk)
-  	@ManyToOne//especificamos el tipo de relacion que extiste entre las tablas
-  	@JoinColumn(name="id_rol")//le asignamos un nombre a la fk
-  	private Rol rol;
-    
-    //CREAMOS LOS CONSTRUCTORES	
+	private String apellido;
+	private Date fechaNacimiento;
+	private String genero;
+	private String telefono;
+	private String externalId;
+	private boolean estper;
+
+	// atrubutos para generar las relaciones(fk)
+	@ManyToOne // especificamos el tipo de relacion que extiste entre las tablas
+	@JoinColumn(name = "id_rol") // le asignamos un nombre a la fk
+	private Rol rol;
+
+	// CREAMOS LOS CONSTRUCTORES
 	public Persona() {
-    	
-    }   
-    
-    public Persona(String nombre, String apellido, Date fechaNacimiento, String genero, String telefono,
-			String externalId, Rol rol) {
+
+	}
+
+	public Persona(String nombre, String apellido, Date fechaNacimiento, String genero, String telefono,
+			String externalId, boolean estper, Rol rol) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
@@ -35,10 +36,11 @@ public class Persona {
 		this.genero = genero;
 		this.telefono = telefono;
 		this.externalId = externalId;
+		this.estper = estper;
 		this.rol = rol;
 	}
 
-	//GENERAMOS LOS GET Y SET
+	// GENERAMOS LOS GET Y SET
 	public long getId() {
 		return id;
 	}
@@ -94,14 +96,23 @@ public class Persona {
 	public void setExternalId(String externalId) {
 		this.externalId = externalId;
 	}
+	
+	public boolean isEstper() {
+		return estper;
+	}
 
-    public Rol getRol() {
+	public void setEstper(boolean estper) {
+		this.estper = estper;
+	}
+
+	public Rol getRol() {
 		return rol;
 	}
 
 	public void setRol(Rol rol) {
 		this.rol = rol;
 	}
+
 
 
 }

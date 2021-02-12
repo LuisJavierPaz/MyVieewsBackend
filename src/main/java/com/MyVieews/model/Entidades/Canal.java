@@ -1,5 +1,18 @@
 package com.MyVieews.model.Entidades;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
 /*
 -id: int
 -fotoPerfil: String
@@ -10,47 +23,34 @@ package com.MyVieews.model.Entidades;
 -strike: int
 -reportes: int */
 
-//@Entity
-//@Table(name="canal")
+@Entity
+@Table(name = "canal")
 public class Canal {
-    /*@Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name ="id_canal")
-    private long id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long idcan;
 
-    @Column(name ="foto_perfil", nullable=false, unique=true)
-    private String fotoPerfil;
+	@Column(name = "foto_perfil", nullable = false, unique = true)
+	private String fotoPerfil;
 
-    @Column(name ="foto_portada", nullable=false, unique=true)
-    private String fotoPortada;
+	@Column(name = "foto_portada", nullable = false, unique = true)
+	private String fotoPortada;
 
-    @Column(name ="nombre_usuario", nullable=false, unique=true)
-    private String nombreCanal;
+	@Column(name = "nombre_usuario", nullable = false, unique = true)
+	private String nombreCanal;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name ="fecha_creacion", nullable=false, unique=true)
-    private Date fechaCreacion=new Date();
+	@Column(name = "fecha_creacion", nullable = false, unique = true)
+	private Date fechaCreacion = new Date();
 
+	@Column(name = "strike", nullable = false)
+	private int strike;
 
-    @Column(name ="strike", nullable=false)
-    private int strike;
+	@Column(name = "reportes", nullable = false)
+	private int reportes;
 
-    @Column(name ="reportes", nullable=false)
-    private int reportes;
+	// atrubutos para generar las relaciones(fk)
+	@OneToOne // especificamos el tipo de relacion que extiste entre las tablas
+	@JoinColumn(name="idperCanal", referencedColumnName = "id")// le asignamos un nombre a la fk private y le referenciamos con que atributo de la otra tabal se va a relacionar
+	Persona perCanal;
 
-    //relations
-    //persona-canal
-    @JoinColumn(name="fkid_persona", referencedColumnName = "id_persona")
-    @OneToOne (fetch = FetchType.LAZY, cascade=CascadeType.ALL)
-    private Persona persona;
-
-    //canal - video
-    @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Video> video;
-
-    @OneToMany (mappedBy = "canal", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<ListaSuscripciones> suscripcion;
-
-
-*/
 }
