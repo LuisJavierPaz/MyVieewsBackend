@@ -12,6 +12,11 @@ public class NotificationRest {
     @Autowired
     NotificationService notificationService;
 
+    /**
+     * Metodo que define la extraccion de una notificacion
+     * @param idCanal parametro de busqueda
+     * @return CanalNotificacion objeto con las notificaciones
+     */
     @GetMapping("/notification/{idCanal}")
     public CanalNotificacion getNotificacion(@PathVariable("idCanal") long idCanal){
 
@@ -23,6 +28,11 @@ public class NotificationRest {
         }
     }
 
+    /**
+     * Metodo que define la ruta de insercion
+     * @param notificationCharger parametro con los datos de insercion
+     * @return CanalNotificacion objeto con los datos insertados
+     */
     @PutMapping(value = "/notification/insert")
     public CanalNotificacion setNotificacion(@RequestBody NotificationCharger notificationCharger){
         try {
@@ -33,6 +43,11 @@ public class NotificationRest {
         }
     }
 
+    /**
+     * Metodo que define la eliminacion de una notificacion
+     * @param notificationCharger parametro con los datos de insercion
+     * @return true si la operacion es satisfactoria
+     */
     @DeleteMapping(value = "/notification/delete")
     public boolean deletNotification(@RequestBody NotificationCharger notificationCharger){
         try {
@@ -42,6 +57,12 @@ public class NotificationRest {
             return  false;
         }
     }
+
+    /**
+     * Metodo que define la ruta de actualizacion
+     * @param notificationCharger parametro con los datos de insercion
+     * @return true si la opeacion es exitosa;
+     */
 
     @PutMapping("/notification/update")
     public boolean updateNotification(@RequestBody NotificationCharger notificationCharger){

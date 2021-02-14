@@ -13,6 +13,11 @@ public class LikeRest {
     @Autowired
     LikeService likeService;
 
+    /**
+     * Metodo que define la extraccion de un like
+     * @param idCanal parametro de busqueda
+     * @return CanalLike con datos de busqueda
+     */
     @GetMapping(value = "/like/{idCanal}")
     public CanalLike getLike(@PathVariable("idCanal") long idCanal){
         try {
@@ -23,7 +28,12 @@ public class LikeRest {
         }
     }
 
-    @PostMapping(value = "/like/set")
+    /**
+     * Metodo que defina la ruta de insercion
+     * @param likeCharger parametro con las propiedades de insercion
+     * @return CanalLike el objeto con datos
+     */
+    @PostMapping(value = "/like/insert")
     public CanalLike setLike(@RequestBody LikeCharger likeCharger){
         try {
             return likeService.setLike(likeCharger);
@@ -33,6 +43,11 @@ public class LikeRest {
         }
     }
 
+    /**
+     * Metodo que define la ruta de actualizacion
+     * @param likeCharger parametro con las propiedades de insercion
+     * @return true en caso que la operacion sea exitosa
+     */
     @PutMapping(value = "/like/update")
     public boolean update(@RequestBody LikeCharger likeCharger){
         try {

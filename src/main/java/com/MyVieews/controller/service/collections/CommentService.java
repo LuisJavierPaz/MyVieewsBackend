@@ -15,7 +15,7 @@ public class CommentService {
     @Autowired
     CommentRepository commentRepository;
 
-    public List<VideoComment> getComment(String externalId) throws Exception {
+    public VideoComment getComment(String externalId) throws Exception {
         return commentRepository.findByExternalIdVideo(externalId);
     }
 

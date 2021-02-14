@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface CommentRepository extends MongoRepository<VideoComment, Serializable> {
     public abstract VideoComment findVideoCommentByExternalIdVideo(String externalId);
-    public abstract List<VideoComment> findByExternalIdVideo(String externalId);
+    public abstract VideoComment findByExternalIdVideo(String externalId);
     public abstract  void deleteByExternalIdVideo(String externalId);
 
 }

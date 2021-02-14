@@ -9,34 +9,51 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping (value = "/api/v1/comentarios")
+@RequestMapping(value = "/api/v1/informacion")
 public class CommentRest {
 
     @Autowired
     CommentService commentService;
 
-    @PostMapping(value = "/set")
-    public VideoComment comment(@RequestBody CommentCharger commentCharger){
-        try{
+    /**
+     * Metodo que define la ruta de insercion
+     *
+     * @param commentCharger objeto de carga de datos
+     * @return VideoComment objeto con los comentarios
+     */
+    @PostMapping(value = "/comentarios/insert")
+    public VideoComment comment(@RequestBody CommentCharger commentCharger) {
+        try {
             return commentService.setComment(commentCharger);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
-    @GetMapping(value = "/get/{externalId}")
-    public  List<VideoComment> getComment(@PathVariable("externalId") String externalId){
-        try{
+    /**
+     * Metodo que define la rute de extraccion de valores
+     *
+     * @param externalId parametro de busqueda
+     * @return VideoComment lista de comentarios segun el id
+     */
+    @GetMapping(value = "/comentarios/{externalId}")
+    public VideoComment getComment(@PathVariable("externalId") String externalId) {
+        try {
             return commentService.getComment(externalId);
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
     }
 
-    @PutMapping(value = "/update")
-    public boolean updateComment(@RequestBody CommentCharger commentCharger){
+    /**
+     * Metodo que define la ruta de actualizacion
+     * @param commentCharger parametro que contiene el objeto actualizado
+     * @return true si se realiza con exito
+     */
+    @PutMapping(value = "/comentarios/update")
+    public boolean updateComment(@RequestBody CommentCharger commentCharger) {
         try {
             return commentService.updateComment(commentCharger);
         } catch (Exception e) {
@@ -44,13 +61,19 @@ public class CommentRest {
             return false;
         }
     }
-    @DeleteMapping(value = "/delete")
-    public  boolean deleteComment(@RequestBody CommentCharger commentCharger){
+
+    /**
+     * Metodo que define la ruta de eliminacion
+     * @param commentCharger  parametro que contiene el objeto actualizado
+     * @return true si se realiza con exito
+     */
+    @DeleteMapping(value = "/comentarios/delete")
+    public boolean deleteComment(@RequestBody CommentCharger commentCharger) {
         try {
             return commentService.deleteComment(commentCharger);
         } catch (Exception e) {
             System.out.println(e.getMessage());
-             return false;
+            return false;
         }
     }
 }

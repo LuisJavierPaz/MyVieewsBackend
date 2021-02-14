@@ -39,5 +39,35 @@ public class ListaSuscripciones {
     @OneToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     private Canal canal;
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getIdCanalSuscrito() {
+        return idCanalSuscrito;
+    }
+
+    public void setIdCanalSuscrito(long idCanalSuscrito) {
+        this.idCanalSuscrito = idCanalSuscrito;
+    }
+
+    public String getNotificacion() {
+        return notificacion;
+    }
+
+    public void setNotificacion(String notificacion) {
+        this.notificacion = notificacion;
+    }
+
+    public Canal getCanal() {
+        return canal;
+    }
+
+    public void setCanal(Canal canal) {
+        this.canal = canal;
+    }
 }
