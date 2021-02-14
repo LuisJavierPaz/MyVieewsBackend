@@ -15,7 +15,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="entityManagerFactory" value="89d4e79c-59d0-4af5-993e-34a082e82f59" />
+          <factory-entry name="entityManagerFactory" value="4fb05fa7-9f09-4598-9e1d-eca747d034cb" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -128,5 +128,12 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish:jakarta.el:3.0.3" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.41" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.tomcat:tomcat-servlet-api:7.0.21" level="project" />
+    <orderEntry type="library" name="Maven: com.cloudinary:cloudinary-http44:1.29.0" level="project" />
+    <orderEntry type="library" name="Maven: com.cloudinary:cloudinary-core:1.29.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.commons:commons-lang3:3.11" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpclient:4.5.13" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.4.14" level="project" />
+    <orderEntry type="library" name="Maven: commons-codec:commons-codec:1.15" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpmime:4.5.13" level="project" />
   </component>
 </module>

@@ -52,124 +52,104 @@ public class Video {
   	@JoinColumn(name="id_cat")//le asignamos un nombre a la fk
   	private Categoria cat;
 
-    public Video(long id, String externalId, String nombre, String descripcion, Date fechaPublicacion, String directorio, long visualizaciones, long gustar, long noGustar, String estadoVideo, String visibilidad, Canal canal, Categoria cat) {
-        this.id = id;
-        this.externalId = externalId;
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.fechaPublicacion = fechaPublicacion;
-        this.directorio = directorio;
-        this.visualizaciones = visualizaciones;
-        this.gustar = gustar;
-        this.noGustar = noGustar;
-        this.estadoVideo = estadoVideo;
-        this.visibilidad = visibilidad;
-        this.canal = canal;
-        this.cat = cat;
-    }
-
-    public Video(){
-
-    }
-
     public long getId() {
         return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
     }
 
     public String getExternalId() {
         return externalId;
     }
 
-    public void setExternalId(String externalId) {
-        this.externalId = externalId;
-    }
-
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public String getDescripcion() {
         return descripcion;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
     public Date getFechaPublicacion() {
         return fechaPublicacion;
-    }
-
-    public void setFechaPublicacion(Date fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
     }
 
     public String getDirectorio() {
         return directorio;
     }
 
-    public void setDirectorio(String directorio) {
-        this.directorio = directorio;
-    }
-
     public long getVisualizaciones() {
         return visualizaciones;
-    }
-
-    public void setVisualizaciones(long visualizaciones) {
-        this.visualizaciones = visualizaciones;
     }
 
     public long getGustar() {
         return gustar;
     }
 
-    public void setGustar(long gustar) {
-        this.gustar = gustar;
-    }
-
     public long getNoGustar() {
         return noGustar;
-    }
-
-    public void setNoGustar(long noGustar) {
-        this.noGustar = noGustar;
     }
 
     public String getEstadoVideo() {
         return estadoVideo;
     }
 
-    public void setEstadoVideo(String estadoVideo) {
-        this.estadoVideo = estadoVideo;
-    }
-
     public String getVisibilidad() {
         return visibilidad;
-    }
-
-    public void setVisibilidad(String visibilidad) {
-        this.visibilidad = visibilidad;
     }
 
     public Canal getCanal() {
         return canal;
     }
 
-    public void setCanal(Canal canal) {
-        this.canal = canal;
-    }
-
     public Categoria getCat() {
         return cat;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setFechaPublicacion(Date fechaPublicacion) {
+        this.fechaPublicacion = fechaPublicacion;
+    }
+
+    public void setDirectorio(String directorio) {
+        this.directorio = directorio;
+    }
+
+    public void setVisualizaciones(long visualizaciones) {
+        this.visualizaciones = visualizaciones;
+    }
+
+    public void setGustar(long gustar) {
+        this.gustar = gustar;
+    }
+
+    public void setNoGustar(long noGustar) {
+        this.noGustar = noGustar;
+    }
+
+    public void setEstadoVideo(String estadoVideo) {
+        this.estadoVideo = estadoVideo;
+    }
+
+    public void setVisibilidad(String visibilidad) {
+        this.visibilidad = visibilidad;
+    }
+
+    public void setCanal(Canal canal) {
+        this.canal = canal;
     }
 
     public void setCat(Categoria cat) {

@@ -53,82 +53,31 @@ public class Canal {
 	@JoinColumn(name="idperCanal", referencedColumnName = "id")// le asignamos un nombre a la fk private y le referenciamos con que atributo de la otra tabal se va a relacionar
 	Persona perCanal;
 
-	public Canal(long idcan, String fotoPerfil, String fotoPortada, String nombreCanal, Date fechaCreacion, int strike, int reportes, Persona perCanal) {
-		this.idcan = idcan;
-		this.fotoPerfil = fotoPerfil;
-		this.fotoPortada = fotoPortada;
-		this.nombreCanal = nombreCanal;
-		this.fechaCreacion = fechaCreacion;
-		this.strike = strike;
-		this.reportes = reportes;
-		this.perCanal = perCanal;
-	}
-
-	public Canal(){
-
-	}
-
 	public long getIdcan() {
 		return idcan;
-	}
-
-	public void setIdcan(long idcan) {
-		this.idcan = idcan;
 	}
 
 	public String getFotoPerfil() {
 		return fotoPerfil;
 	}
 
-	public void setFotoPerfil(String fotoPerfil) {
-		this.fotoPerfil = fotoPerfil;
-	}
-
 	public String getFotoPortada() {
 		return fotoPortada;
-	}
-
-	public void setFotoPortada(String fotoPortada) {
-		this.fotoPortada = fotoPortada;
 	}
 
 	public String getNombreCanal() {
 		return nombreCanal;
 	}
 
-	public void setNombreCanal(String nombreCanal) {
-		this.nombreCanal = nombreCanal;
-	}
-
 	public Date getFechaCreacion() {
 		return fechaCreacion;
-	}
-
-	public void setFechaCreacion(Date fechaCreacion) {
-		this.fechaCreacion = fechaCreacion;
 	}
 
 	public int getStrike() {
 		return strike;
 	}
 
-	public void setStrike(int strike) {
-		this.strike = strike;
-	}
-
 	public int getReportes() {
 		return reportes;
-	}
-
-	public void setReportes(int reportes) {
-		this.reportes = reportes;
-	}
-
-	public Persona getPerCanal() {
-		return perCanal;
-	}
-
-	public void setPerCanal(Persona perCanal) {
-		this.perCanal = perCanal;
 	}
 }

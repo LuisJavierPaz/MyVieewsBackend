@@ -22,6 +22,15 @@ public class Categoria {
 
     private String externaId;
 
-  
+    public int getIdcat() {
+        return idcat;
+    }
 
+    public String getNomcat() {
+        return nomcat;
+    }
+
+    public String getExternaId() {
+        return externaId;
+    }
 }
