@@ -36,7 +36,7 @@ public class Cuenta {
 		this.externalId = externalId;
 		this.persona = persona;
 	}
-  	public Cuenta() {
+  	public Cuenta(){
 		
 	}
   	
