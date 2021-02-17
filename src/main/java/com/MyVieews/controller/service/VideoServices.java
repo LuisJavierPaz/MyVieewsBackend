@@ -19,6 +19,7 @@ import javax.swing.text.html.parser.Entity;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Service("VideoSeevices")
 public class VideoServices {
@@ -48,8 +49,9 @@ public class VideoServices {
             String idCategoria = videoCharger.getExternalIdCategoria();
             long idCanal = videoCharger.getIdCanal();
             Video video = videoCharger.getVideo();
+            video.setExternalId(UUID.randomUUID().toString());
             Categoria categoria = categoriaRepositry.findFirstByExternaId(idCategoria);
-            Canal canal = canalRepository.findFirstByIdcan(idCanal);
+            Canal canal = canalRepository.findByIdcan(idCanal);
             if (categoria != null && canal != null) {
                 video.setCanal(canal);
                 video.setCat(categoria);
@@ -107,6 +109,20 @@ public class VideoServices {
         }catch (Exception e){
             return  null;
         }
+    }
+
+    /**
+     * Metodo que busca un video por su external id
+     * @param externalId Parametro de busqued
+     * @return Video con los datos de la busqueda
+     * @throws Exception
+     */
+    public List<Video> getVideoExternalId (String externalId) throws Exception{
+        return searchVideoRepository.findVideoByExternalId(externalId);
+    }
+
+    public List<Video> getVideoDistictExternalId(String externalId) throws Exception{
+        return searchVideoRepository.findDistinctByExternalId(externalId);
     }
 
 }

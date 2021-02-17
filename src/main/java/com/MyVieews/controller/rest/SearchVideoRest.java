@@ -28,7 +28,7 @@ public class SearchVideoRest {
      * @param videoCharger el video con lps datos a ser guardados
      * @return true si se guardo con exitp
      */
-    @PostMapping(value = "/saveVideo")
+    @PostMapping(value = "/save")
     public boolean save(@RequestBody VideoCharger videoCharger) {
         try {
             searchVideoServices.setViedo(videoCharger);
@@ -45,7 +45,7 @@ public class SearchVideoRest {
      * @return ResponseEntity que contiene los datos del video guardado
      */
 
-    @PostMapping(value = "/uploadVideo", consumes = "multipart/form-data")
+    @PostMapping(value = "/upload", consumes = "multipart/form-data")
     public ResponseEntity<Map> upload(@RequestParam(value = "multipartFile") MultipartFile multipartFile) {
         try {
             Map uploadResult = searchVideoServices.saveVideoCloudinary(multipartFile);
@@ -60,7 +60,7 @@ public class SearchVideoRest {
      *
      * @return List de videos
      */
-    @GetMapping(value = "/view")
+    @GetMapping(value = "/get")
     public List<Video> getAllVideo() throws Exception {
         return searchVideoServices.getAllVideo();
     }
@@ -72,11 +72,17 @@ public class SearchVideoRest {
      * @return List video que continen el nombre
      * @throws Exception
      */
-    @GetMapping(value = "/view/{nombre}")
+    @CrossOrigin
+    @GetMapping(value = "/get/name/{nombre}")
     public List<Video> getVideoContaingName(@PathVariable("nombre") String nombre) throws Exception {
         return searchVideoServices.getVideoContainName(nombre);
     }
 
+    /**
+     * Metodo que define la ruta que retorna  un video segun el iD
+     * @param id parameto de busqueda
+     * @return Video coincidente con la busqueda
+     */
     @GetMapping(value = "/view/id/{id}")
     public Video getVideiId(@PathVariable("id") long id){
         try{
@@ -85,4 +91,26 @@ public class SearchVideoRest {
             return null;
         }
     }
+
+    @GetMapping(value = "/get/id/{externalId}")
+    public List<Video> getVideoExternaId(@PathVariable String externalId){
+        try {
+            return searchVideoServices.getVideoExternalId(externalId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+             return null;
+        }
+    }
+
+    @GetMapping(value = "get/distinto/{externalId}")
+    public List<Video> getVideoDistinto(@PathVariable ("externalId") String externalId){
+        try {
+            return searchVideoServices.getVideoDistictExternalId(externalId);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+
 }

@@ -6,6 +6,7 @@ import com.MyVieews.utils.modelAux.LikeCharger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/informacion")
 public class LikeRest {

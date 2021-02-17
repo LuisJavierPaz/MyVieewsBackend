@@ -5,7 +5,7 @@ import com.MyVieews.model.collections.CanalNotificacion;
 import com.MyVieews.utils.modelAux.NotificationCharger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+@CrossOrigin
 @RestController
 @RequestMapping(value = "/api/v1/informacion")
 public class NotificationRest {

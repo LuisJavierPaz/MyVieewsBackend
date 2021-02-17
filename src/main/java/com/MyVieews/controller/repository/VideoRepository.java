@@ -17,4 +17,7 @@ import java.util.List;
 public interface VideoRepository extends JpaRepository<Video, Serializable> {
     public abstract List<Video> findVideoByNombreContaining(String nombre);
     public abstract  Video findVideoById(long id);
+    public abstract  List<Video> findVideoByExternalId(String externalId);
+    @Query(value ="select * from video where  video.external_id <> :externalId" , nativeQuery = true)
+    public abstract  List<Video> findDistinctByExternalId(@Param("externalId") String externalId);
 }
