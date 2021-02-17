@@ -13,7 +13,7 @@ public class VideoService {
     @Autowired
     private VideoRepository videoRepository;
 
-    public Video findVideoByExternalId(String ExternalId) { return videoRepository.findVideoByExternalId(ExternalId);}
+    public Video findVideoByExternalId(String ExternalId) { return videoRepository.findVideoByExternal(ExternalId);}
 
     public Video save(Video video){
         try{

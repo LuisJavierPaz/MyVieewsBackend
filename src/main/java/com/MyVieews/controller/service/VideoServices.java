@@ -51,7 +51,7 @@ public class VideoServices {
             Video video = videoCharger.getVideo();
             video.setExternalId(UUID.randomUUID().toString());
             Categoria categoria = categoriaRepositry.findFirstByExternaId(idCategoria);
-            Canal canal = canalRepository.findByIdcan(idCanal);
+            Canal canal = canalRepository.findCanalByIdcan(idCanal);
             if (categoria != null && canal != null) {
                 video.setCanal(canal);
                 video.setCat(categoria);

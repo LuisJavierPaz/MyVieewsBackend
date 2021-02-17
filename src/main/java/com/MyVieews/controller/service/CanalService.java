@@ -12,20 +12,23 @@ public class CanalService {
     @Autowired
     private CanalRepository canalRepository;
 
-    public Canal findCanalByIdcan(Long Idcan){return canalRepository.findCanalByIdcan(Idcan);}
+    public Canal findCanalByIdcan(Long Idcan) {
+        return canalRepository.findCanalByIdcan(Idcan);
+    }
 
-    public Canal save(Canal canal){
+    public Canal save(Canal canal) {
         try {
-           canalRepository.save(canal);
-           return canal;
-        }catch (Exception e){
+            canalRepository.save(canal);
+            return canal;
+        } catch (Exception e) {
             return null;
         }
     }
-    public List<Canal> findAll(){
+
+    public List<Canal> findAll() {
         try {
             return canalRepository.findAll();
-        }catch (Exception e){
+        } catch (Exception e) {
             return null;
         }
     }

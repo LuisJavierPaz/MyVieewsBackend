@@ -50,7 +50,7 @@ public class SuscripcionesService {
         try {
             long idCanalSuscrito = suscripcionCharger.getIdCanalSuscriptor();
             long idCanal = suscripcionCharger.getIdCanal();
-            Canal canal = canalRepository.findByIdcan(idCanal);
+            Canal canal = canalRepository.findCanalByIdcan(idCanal);
             ListaSuscripciones suscripciones = new ListaSuscripciones();
             suscripciones.setIdCanalSuscrito(idCanalSuscrito);
             suscripciones.setCanal(canal);
