@@ -17,12 +17,14 @@ public class CanalRest {
     @Autowired
     private CanalService canalService;
 
+    //Lista los canales
     @GetMapping
     private ResponseEntity<List<Canal>> getAllCanales (){return ResponseEntity.ok(canalService.findAll());}
-
+    //Se obtiene los datos de un canal
     @GetMapping(value = "canal/{Idcan}")
     private Canal getCanal(@PathVariable("Idcan") Long Idcan){return canalService.findCanalByIdcan(Idcan);}
 
+    //Se utiliza para guardar
     @PostMapping
     private ResponseEntity<Canal> saveCanal (@RequestBody Canal canal){
         try{

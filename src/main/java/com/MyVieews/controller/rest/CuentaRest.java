@@ -35,7 +35,7 @@ public class CuentaRest {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
 		}
 	}
-
+	//se utiliza para eliminar cuenta
 	@DeleteMapping (value = "delete/{ExternalId}")
 	private ResponseEntity<Boolean> deleteCuenta (@PathVariable ("ExternalId") String ExternalId){
 		cuentaService.deleteByExternalId(ExternalId);
